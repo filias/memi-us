@@ -1,0 +1,20 @@
+[project]
+name = "memi-us"
+version = "0.1.0"
+description = "Memi US - practise your memory about the United States"
+requires-python = ">=3.10"
+dependencies = [
+    "flask>=3.0",
+    "gunicorn>=22",
+    "memi-engine @ git+https://github.com/filias/memi-engine.git",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["memi_us"]

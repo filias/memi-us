@@ -1,0 +1,13 @@
+[Unit]
+Description=Memi US
+After=network.target
+
+[Service]
+User=memi
+WorkingDirectory=/opt/memi-us
+ExecStart=/opt/memi-us/.venv/bin/gunicorn memi_us.app:app --bind 127.0.0.1:8088 --workers 2
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
