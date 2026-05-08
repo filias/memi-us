@@ -9,6 +9,7 @@ import memi_us.providers  # noqa: F401
 config = MemiConfig(
     title="memi US",
     subtitle="practise your memory",
+    favicon_color="#3C3B6E",
     themes=["light", "blue", "red", "dark"],
     default_theme="light",
     sponsor_url="https://github.com/sponsors/filias",
