@@ -12,6 +12,13 @@ config = MemiConfig(
     favicon_color="#3C3B6E",
     sponsor_url="https://github.com/sponsors/filias",
     sponsor_text="sponsor",
+    related_sites=[
+        {"name": "memi", "url": "https://memi.click"},
+        {"name": "memi portugal", "url": "https://pt.memi.click"},
+        {"name": "memi lisboa", "url": "https://lx.memi.click"},
+        {"name": "memi slovensko", "url": "https://sk.memi.click"},
+        {"name": "memi Mallorca", "url": "https://ml.memi.click"},
+    ],
     about_html="""
         <p>Memi US is a memory practice game about the United States.</p>
         <p>Pick a category, look at the image, and try to guess what it is
