@@ -17,7 +17,6 @@ config = MemiConfig(
         {"name": "memi portugal", "url": "https://pt.memi.click"},
         {"name": "memi lisboa", "url": "https://lx.memi.click"},
         {"name": "memi slovensko", "url": "https://sk.memi.click"},
-        {"name": "memi Mallorca", "url": "https://ml.memi.click"},
     ],
     about_html="""
         <p>Memi US is a memory practice game about the United States.</p>
