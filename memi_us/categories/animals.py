@@ -50,3 +50,29 @@ WIKIPEDIA = {
     "California sea lion": "California sea lion",
     "Florida panther": "Florida panther",
 }
+
+# Display name -> scientific name (shown as tag on reveal).
+SCIENTIFIC_NAMES = {
+    "Bald eagle": "Haliaeetus leucocephalus",
+    "American bison": "Bison bison",
+    "Grizzly bear": "Ursus arctos horribilis",
+    "American black bear": "Ursus americanus",
+    "Bobcat": "Lynx rufus",
+    "Cougar": "Puma concolor",
+    "Coyote": "Canis latrans",
+    "Gray wolf": "Canis lupus",
+    "Pronghorn": "Antilocapra americana",
+    "Moose": "Alces alces",
+    "American alligator": "Alligator mississippiensis",
+    "Bighorn sheep": "Ovis canadensis",
+    "Raccoon": "Procyon lotor",
+    "Red fox": "Vulpes vulpes",
+    "Wild turkey": "Meleagris gallopavo",
+    "American beaver": "Castor canadensis",
+    "Manatee": "Trichechus",
+    "Roadrunner": "Geococcyx",
+    "River otter": "Lontra canadensis",
+    "American flamingo": "Phoenicopterus ruber",
+    "California sea lion": "Zalophus californianus",
+    "Florida panther": "Puma concolor coryi",
+}

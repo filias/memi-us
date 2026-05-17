@@ -40,3 +40,24 @@ WIKIPEDIA = {
     "California poppy": "Eschscholzia californica",
     "Cherokee rose": "Rosa laevigata",
 }
+
+# Display name -> scientific name (shown as tag on reveal).
+SCIENTIFIC_NAMES = {
+    "Giant sequoia": "Sequoiadendron giganteum",
+    "Coast redwood": "Sequoia sempervirens",
+    "Joshua tree": "Yucca brevifolia",
+    "Saguaro": "Carnegiea gigantea",
+    "Bristlecone pine": "Pinus longaeva",
+    "Sugar maple": "Acer saccharum",
+    "Eastern white pine": "Pinus strobus",
+    "Southern live oak": "Quercus virginiana",
+    "American elm": "Ulmus americana",
+    "Flowering dogwood": "Cornus florida",
+    "Southern magnolia": "Magnolia grandiflora",
+    "Tulip tree": "Liriodendron tulipifera",
+    "Spanish moss": "Tillandsia usneoides",
+    "Texas bluebonnet": "Lupinus texensis",
+    "Indian paintbrush": "Castilleja",
+    "California poppy": "Eschscholzia californica",
+    "Cherokee rose": "Rosa laevigata",
+}

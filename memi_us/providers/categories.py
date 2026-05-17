@@ -32,10 +32,12 @@ from memi_us.categories.landscapes import (
 from memi_us.categories.animals import (
     ALL as ANIMAL_LIST,
     WIKIPEDIA as ANIMAL_WIKI,
+    SCIENTIFIC_NAMES as ANIMAL_SCIENTIFIC,
 )
 from memi_us.categories.plants import (
     ALL as PLANT_LIST,
     WIKIPEDIA as PLANT_WIKI,
+    SCIENTIFIC_NAMES as PLANT_SCIENTIFIC,
 )
 
 
@@ -173,6 +175,12 @@ class AnimalsProvider(CategoryProvider):
     def get_image(self, item):
         return images.get_wikipedia_image(ANIMAL_WIKI.get(item, item))
 
+    def get_tag(self, item):
+        sci = ANIMAL_SCIENTIFIC.get(item, "")
+        if sci and sci.lower() != item.lower():
+            return sci
+        return None
+
 
 class PlantsProvider(CategoryProvider):
     key = "nature:plants"
@@ -181,6 +189,12 @@ class PlantsProvider(CategoryProvider):
 
     def get_image(self, item):
         return images.get_wikipedia_image(PLANT_WIKI.get(item, item))
+
+    def get_tag(self, item):
+        sci = PLANT_SCIENTIFIC.get(item, "")
+        if sci and sci.lower() != item.lower():
+            return sci
+        return None
 
 
 register(StateFlagsProvider())
