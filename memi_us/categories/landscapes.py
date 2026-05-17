@@ -25,31 +25,29 @@ ALL = [
     "Rocky Mountains",
 ]
 
-# Display name -> US state abbreviation(s) (shown as tag on reveal).
-# Two-letter codes keep tags uniform (see monuments.py for the regex
-# rationale). Skipped for very multi-state features (Mississippi River,
-# Rocky Mountains).
+# Display name -> US state(s) (shown as tag on reveal). Skipped for
+# very multi-state features (Mississippi River, Rocky Mountains).
 LOCATIONS = {
-    "Grand Canyon": "AZ",
-    "Yellowstone": "WY",
-    "Yosemite": "CA",
-    "Niagara Falls": "NY",
-    "Death Valley": "CA",
-    "Everglades": "FL",
-    "Monument Valley": "AZ–UT",
-    "Glacier National Park": "MT",
-    "Crater Lake": "OR",
-    "Denali": "AK",
-    "Mount Rainier": "WA",
-    "Joshua Tree National Park": "CA",
-    "Bryce Canyon": "UT",
-    "Zion National Park": "UT",
-    "Acadia National Park": "ME",
-    "Arches National Park": "UT",
-    "Mammoth Cave": "KY",
-    "Great Smoky Mountains": "TN–NC",
-    "Mojave Desert": "CA–NV",
-    "Hawaiʻi Volcanoes": "HI",
+    "Grand Canyon": "Arizona",
+    "Yellowstone": "Wyoming",
+    "Yosemite": "California",
+    "Niagara Falls": "New York",
+    "Death Valley": "California",
+    "Everglades": "Florida",
+    "Monument Valley": "Arizona–Utah",
+    "Glacier National Park": "Montana",
+    "Crater Lake": "Oregon",
+    "Denali": "Alaska",
+    "Mount Rainier": "Washington",
+    "Joshua Tree National Park": "California",
+    "Bryce Canyon": "Utah",
+    "Zion National Park": "Utah",
+    "Acadia National Park": "Maine",
+    "Arches National Park": "Utah",
+    "Mammoth Cave": "Kentucky",
+    "Great Smoky Mountains": "Tennessee–North Carolina",
+    "Mojave Desert": "California–Nevada",
+    "Hawaiʻi Volcanoes": "Hawaii",
 }
 
 # Display name -> English Wikipedia article title.

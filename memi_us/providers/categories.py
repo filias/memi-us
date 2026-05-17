@@ -143,6 +143,7 @@ class MonumentsProvider(CategoryProvider):
     key = "culture:monuments"
     items = MONUMENT_LIST
     override_name = True
+    tag_style = "plain"
 
     def get_image(self, item):
         return images.get_wikipedia_image(MONUMENT_WIKI.get(item, item))
@@ -167,6 +168,7 @@ class LandscapesProvider(CategoryProvider):
     key = "nature:landscapes"
     items = LANDSCAPE_LIST
     override_name = True
+    tag_style = "plain"
 
     def get_image(self, item):
         return images.get_wikipedia_image(LANDSCAPE_WIKI.get(item, item))
@@ -179,6 +181,7 @@ class AnimalsProvider(CategoryProvider):
     key = "nature:animals"
     items = ANIMAL_LIST
     override_name = True
+    tag_style = "scientific"
 
     def get_image(self, item):
         return images.get_wikipedia_image(ANIMAL_WIKI.get(item, item))
@@ -194,6 +197,7 @@ class PlantsProvider(CategoryProvider):
     key = "nature:plants"
     items = PLANT_LIST
     override_name = True
+    tag_style = "scientific"
 
     def get_image(self, item):
         return images.get_wikipedia_image(PLANT_WIKI.get(item, item))
