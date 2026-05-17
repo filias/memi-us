@@ -15,6 +15,28 @@ from memi_us.categories.nba import (
     CONFERENCES as NBA_CONF,
     LOGOS as NBA_LOGOS,
 )
+from memi_us.categories.nfl import (
+    ALL as NFL_LIST,
+    WIKIPEDIA as NFL_WIKI,
+    CONFERENCES as NFL_CONF,
+)
+from memi_us.categories.monuments import (
+    ALL as MONUMENT_LIST,
+    WIKIPEDIA as MONUMENT_WIKI,
+)
+from memi_us.categories.people import ALL as PEOPLE_LIST
+from memi_us.categories.landscapes import (
+    ALL as LANDSCAPE_LIST,
+    WIKIPEDIA as LANDSCAPE_WIKI,
+)
+from memi_us.categories.animals import (
+    ALL as ANIMAL_LIST,
+    WIKIPEDIA as ANIMAL_WIKI,
+)
+from memi_us.categories.plants import (
+    ALL as PLANT_LIST,
+    WIKIPEDIA as PLANT_WIKI,
+)
 
 
 def _state_map(state):
@@ -94,7 +116,80 @@ class NBATeamsProvider(CategoryProvider):
         return f"{NBA_CONF.get(item, '')} Conference"
 
 
+_NFL_CONF_FILTER = {
+    "afc": [name for name, c in NFL_CONF.items() if c == "AFC"],
+    "nfc": [name for name, c in NFL_CONF.items() if c == "NFC"],
+}
+
+
+class NFLTeamsProvider(CategoryProvider):
+    key = "sports:nfl teams"
+    items = NFL_LIST
+    override_name = True
+    filters = {"conference": _NFL_CONF_FILTER}
+
+    def get_image(self, item):
+        return images.get_wikipedia_image(NFL_WIKI.get(item, item))
+
+    def get_tag(self, item):
+        return f"{NFL_CONF.get(item, '')} Conference"
+
+
+class MonumentsProvider(CategoryProvider):
+    key = "culture:monuments"
+    items = MONUMENT_LIST
+    override_name = True
+
+    def get_image(self, item):
+        return images.get_wikipedia_image(MONUMENT_WIKI.get(item, item))
+
+
+class PeopleProvider(CategoryProvider):
+    key = "culture:people"
+    items = PEOPLE_LIST
+
+    def get_tag(self, item):
+        desc = images.get_wikipedia_description(item)
+        if desc:
+            desc = desc.replace("(born ", "(").replace("(", "").replace(")", "")
+            return desc
+        return None
+
+
+class LandscapesProvider(CategoryProvider):
+    key = "nature:landscapes"
+    items = LANDSCAPE_LIST
+    override_name = True
+
+    def get_image(self, item):
+        return images.get_wikipedia_image(LANDSCAPE_WIKI.get(item, item))
+
+
+class AnimalsProvider(CategoryProvider):
+    key = "nature:animals"
+    items = ANIMAL_LIST
+    override_name = True
+
+    def get_image(self, item):
+        return images.get_wikipedia_image(ANIMAL_WIKI.get(item, item))
+
+
+class PlantsProvider(CategoryProvider):
+    key = "nature:plants"
+    items = PLANT_LIST
+    override_name = True
+
+    def get_image(self, item):
+        return images.get_wikipedia_image(PLANT_WIKI.get(item, item))
+
+
 register(StateFlagsProvider())
 register(StateCapitalsProvider())
 register(StateShapesProvider())
 register(NBATeamsProvider())
+register(NFLTeamsProvider())
+register(MonumentsProvider())
+register(PeopleProvider())
+register(LandscapesProvider())
+register(AnimalsProvider())
+register(PlantsProvider())
