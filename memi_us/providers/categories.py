@@ -23,11 +23,13 @@ from memi_us.categories.nfl import (
 from memi_us.categories.monuments import (
     ALL as MONUMENT_LIST,
     WIKIPEDIA as MONUMENT_WIKI,
+    LOCATIONS as MONUMENT_LOCATIONS,
 )
 from memi_us.categories.people import ALL as PEOPLE_LIST
 from memi_us.categories.landscapes import (
     ALL as LANDSCAPE_LIST,
     WIKIPEDIA as LANDSCAPE_WIKI,
+    LOCATIONS as LANDSCAPE_LOCATIONS,
 )
 from memi_us.categories.animals import (
     ALL as ANIMAL_LIST,
@@ -145,6 +147,9 @@ class MonumentsProvider(CategoryProvider):
     def get_image(self, item):
         return images.get_wikipedia_image(MONUMENT_WIKI.get(item, item))
 
+    def get_tag(self, item):
+        return MONUMENT_LOCATIONS.get(item)
+
 
 class PeopleProvider(CategoryProvider):
     key = "culture:people"
@@ -165,6 +170,9 @@ class LandscapesProvider(CategoryProvider):
 
     def get_image(self, item):
         return images.get_wikipedia_image(LANDSCAPE_WIKI.get(item, item))
+
+    def get_tag(self, item):
+        return LANDSCAPE_LOCATIONS.get(item)
 
 
 class AnimalsProvider(CategoryProvider):

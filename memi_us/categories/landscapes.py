@@ -25,6 +25,31 @@ ALL = [
     "Rocky Mountains",
 ]
 
+# Display name -> US state(s) (shown as tag on reveal). Skipped for
+# very multi-state features (Mississippi River, Rocky Mountains).
+LOCATIONS = {
+    "Grand Canyon": "Arizona",
+    "Yellowstone": "Wyoming",
+    "Yosemite": "California",
+    "Niagara Falls": "New York",
+    "Death Valley": "California",
+    "Everglades": "Florida",
+    "Monument Valley": "Arizona–Utah",
+    "Glacier National Park": "Montana",
+    "Crater Lake": "Oregon",
+    "Denali": "Alaska",
+    "Mount Rainier": "Washington",
+    "Joshua Tree National Park": "California",
+    "Bryce Canyon": "Utah",
+    "Zion National Park": "Utah",
+    "Acadia National Park": "Maine",
+    "Arches National Park": "Utah",
+    "Mammoth Cave": "Kentucky",
+    "Great Smoky Mountains": "Tennessee–North Carolina",
+    "Mojave Desert": "California–Nevada",
+    "Hawaiʻi Volcanoes": "Hawaii",
+}
+
 # Display name -> English Wikipedia article title.
 WIKIPEDIA = {
     "Grand Canyon": "Grand Canyon",

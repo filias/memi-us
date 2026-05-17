@@ -31,6 +31,38 @@ ALL = [
     "One World Trade Center",
 ]
 
+# Display name -> US state/territory (shown as tag on reveal).
+LOCATIONS = {
+    "Statue of Liberty": "New York",
+    "Empire State Building": "New York",
+    "Mount Rushmore": "South Dakota",
+    "White House": "Washington D.C.",
+    "Lincoln Memorial": "Washington D.C.",
+    "Washington Monument": "Washington D.C.",
+    "US Capitol": "Washington D.C.",
+    "Brooklyn Bridge": "New York",
+    "Golden Gate Bridge": "California",
+    "Space Needle": "Washington",
+    "Gateway Arch": "Missouri",
+    "Hollywood Sign": "California",
+    "Independence Hall": "Pennsylvania",
+    "Liberty Bell": "Pennsylvania",
+    "The Pentagon": "Virginia",
+    "Mount Vernon": "Virginia",
+    "Monticello": "Virginia",
+    "Vietnam Veterans Memorial": "Washington D.C.",
+    "Jefferson Memorial": "Washington D.C.",
+    "The Alamo": "Texas",
+    "Times Square": "New York",
+    "Willis Tower": "Illinois",
+    "Cinderella Castle": "Florida",
+    "Wrigley Field": "Illinois",
+    "Fenway Park": "Massachusetts",
+    "Hoover Dam": "Nevada–Arizona",
+    "USS Arizona Memorial": "Hawaii",
+    "One World Trade Center": "New York",
+}
+
 # Display name -> English Wikipedia article title.
 WIKIPEDIA = {
     "Statue of Liberty": "Statue of Liberty",
