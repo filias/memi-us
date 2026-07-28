@@ -7,6 +7,10 @@ from memi_engine import MemiConfig, create_app
 import memi_us.providers  # noqa: F401
 
 config = MemiConfig(
+    analytics_html=(
+        '<script data-goatcounter="https://memi-us.goatcounter.com/count"'
+        ' async src="//gc.zgo.at/count.js"></script>'
+    ),
     title="memi US",
     subtitle="practise your memory",
     favicon_color="#3C3B6E",
