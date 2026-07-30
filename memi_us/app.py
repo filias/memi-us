@@ -7,6 +7,7 @@ from memi_engine import MemiConfig, create_app
 import memi_us.providers  # noqa: F401
 
 config = MemiConfig(
+    default_category="culture:monuments",
     analytics_html=(
         '<script data-goatcounter="https://memi-us.goatcounter.com/count"'
         ' async src="//gc.zgo.at/count.js"></script>'
