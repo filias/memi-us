@@ -1,4 +1,4 @@
-# memi US
+# memi united states
 
 A US memory card game built on [memi-engine](https://github.com/filias/memi-engine).
 

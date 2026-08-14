@@ -12,16 +12,16 @@ config = MemiConfig(
         '<script data-goatcounter="https://memi-us.goatcounter.com/count"'
         ' async src="//gc.zgo.at/count.js"></script>'
     ),
-    title="memi US",
+    title="memi united states",
     subtitle="practise your memory",
     favicon_color="#3C3B6E",
     sponsor_url="https://github.com/sponsors/filias",
     sponsor_text="sponsor",
     related_sites=[
-        {"name": "memi", "url": "https://memi.click"},
-        {"name": "memi portugal", "url": "https://pt.memi.click"},
-        {"name": "memi lisboa", "url": "https://lx.memi.click"},
-        {"name": "memi slovensko", "url": "https://sk.memi.click"},
+        {"name": "memi", "url": "https://world.memi.games"},
+        {"name": "memi portugal", "url": "https://pt.memi.games"},
+        {"name": "memi lisboa", "url": "https://lx.memi.games"},
+        {"name": "memi slovensko", "url": "https://sk.memi.games"},
     ],
     about_html="""
         <p>Memi US is a memory practice game about the United States.
