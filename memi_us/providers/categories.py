@@ -7,6 +7,7 @@ from memi_us.categories.states import (
     ALL as STATE_LIST,
     ABBREVIATIONS as STATE_ABBREVS,
     CAPITALS as STATE_CAPITALS,
+    CAPITAL_WIKIPEDIA as CAPITAL_WIKI,
     REGIONS as STATE_REGIONS,
 )
 from memi_us.categories.nba import (
@@ -41,6 +42,11 @@ from memi_us.categories.plants import (
     WIKIPEDIA as PLANT_WIKI,
     SCIENTIFIC_NAMES as PLANT_SCIENTIFIC,
 )
+
+
+# The United States, Alaska and Hawaii included. Wikidata coordinates outside
+# it belong to something other than the place on the card, so they get no map.
+US_BOUNDS = ((18.0, 72.0), (-180.0, -65.0))
 
 
 def _state_map(state):
@@ -83,6 +89,11 @@ class StateCapitalsProvider(CategoryProvider):
     def get_clue(self, item):
         return item.split("(")[0].strip()
 
+    def get_wikipedia_title(self, item):
+        # The answer is the capital; the card is a Commons map.
+        title = CAPITAL_WIKI.get(item)
+        return ("en", title) if title else None
+
 
 class StateShapesProvider(CategoryProvider):
     key = "geography:states:shapes"
@@ -95,6 +106,10 @@ class StateShapesProvider(CategoryProvider):
             result["name"] = item.split("(")[0].strip()
             return result
         return None
+
+    def get_wikipedia_title(self, item):
+        # Items are the states' article titles; the card is a Commons map.
+        return ("en", item)
 
 
 _NBA_CONF_FILTER = {
@@ -115,6 +130,10 @@ class NBATeamsProvider(CategoryProvider):
         if logo:
             return {"name": item, "image": logo}
         return images.get_wikipedia_image(NBA_WIKI.get(item, item))
+
+    def get_wikipedia_title(self, item):
+        # Most cards are local logos without an article link.
+        return ("en", NBA_WIKI.get(item, item))
 
     def get_tag(self, item):
         return f"{NBA_CONF.get(item, '')} Conference"
@@ -141,6 +160,8 @@ class NFLTeamsProvider(CategoryProvider):
 
 class MonumentsProvider(CategoryProvider):
     key = "culture:monuments"
+    map_zoom = 15
+    map_bounds = US_BOUNDS
     items = MONUMENT_LIST
     override_name = True
     tag_style = "plain"
@@ -166,6 +187,8 @@ class PeopleProvider(CategoryProvider):
 
 class LandscapesProvider(CategoryProvider):
     key = "nature:landscapes"
+    map_zoom = 9
+    map_bounds = US_BOUNDS
     items = LANDSCAPE_LIST
     override_name = True
     tag_style = "plain"

@@ -8,6 +8,9 @@ import memi_us.providers  # noqa: F401
 
 config = MemiConfig(
     default_category="culture:monuments",
+    # Details panel beside the card on reveal: the Wikipedia intro and, for
+    # places, a map.
+    layout="enriched",
     analytics_html=(
         '<script data-goatcounter="https://memi-us.goatcounter.com/count"'
         ' async src="//gc.zgo.at/count.js"></script>'
