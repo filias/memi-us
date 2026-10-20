@@ -6,15 +6,35 @@ from memi_engine import MemiConfig, create_app
 
 import memi_us.providers  # noqa: F401
 
+# The home page opens on the menu, and its empty card shows the outline of the United States in its flag above
+# "pick a category". The engine has no setting for that, so this rides on
+# analytics_html (raw HTML at the bottom of every page, after app.js); loading
+# a category replaces the card's text, so the map goes with it.
+# static/flag-map-united-states.svg: Wikimedia Commons, "Flag-map of the United States.svg" by Дмитрий-5-Аверин, CC BY-SA 3.0.
+HOME_CARD_HTML = """
+<style>
+    #status.home { width: 100%; text-align: center; }
+    #status .home-map { display: block; max-width: 80%; max-height: calc(min(500px, 90vw) * 0.6); margin: 0 auto 1.5rem; }
+</style>
+<script>
+(function () {
+    var status = document.getElementById('status');
+    if (status && status.textContent.trim() === 'pick a category') {
+        status.classList.add('home');
+        status.insertAdjacentHTML('afterbegin', '<img class="home-map" src="/static/flag-map-united-states.svg" alt="United States">');
+    }
+})();
+</script>
+"""
+
 config = MemiConfig(
-    default_category="culture:monuments",
     # Details panel beside the card on reveal: the Wikipedia intro and, for
     # places, a map.
     layout="enriched",
     analytics_html=(
         '<script data-goatcounter="https://memi-us.goatcounter.com/count"'
         ' async src="//gc.zgo.at/count.js"></script>'
-    ),
+    ) + HOME_CARD_HTML,
     title="memi united states",
     subtitle="practise your memory",
     favicon_color="#3C3B6E",
@@ -71,6 +91,8 @@ config = MemiConfig(
         recall</em>.</p>
         <p>Short, frequent sessions outperform long ones &mdash; the
         <em>spacing effect</em>. A few minutes a day is enough.</p>
+
+        <p>Flag map on the home page: <a href="https://commons.wikimedia.org/wiki/File:Flag-map_of_the_United_States.svg">Дмитрий-5-Аверин</a>, CC BY-SA 3.0.</p>
     """,
     done_html="""
         <svg width="200" height="180" viewBox="0 0 80 72" xmlns="http://www.w3.org/2000/svg">
